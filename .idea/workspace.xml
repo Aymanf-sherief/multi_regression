@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90223062-be41-4456-9096-718ec717f330" name="Default" comment="" />
+    <list default="true" id="90223062-be41-4456-9096-718ec717f330" name="Default" comment="initial commit&#10;&#10;Signed-off-by: ayman fawzy sherief &lt;aymanf.sherief@gmail.com&gt;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../multi_regression/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../multi_regression/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -347,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494014444831</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="initial commit&#10;&#10;Signed-off-by: ayman fawzy sherief &lt;aymanf.sherief@gmail.com&gt;">
+      <created>1494014501078</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1494014501078</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -383,7 +392,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="initial commit&#10;&#10;Signed-off-by: ayman fawzy sherief &lt;aymanf.sherief@gmail.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit&#10;&#10;Signed-off-by: ayman fawzy sherief &lt;aymanf.sherief@gmail.com&gt;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
