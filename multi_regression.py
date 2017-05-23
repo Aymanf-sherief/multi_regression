@@ -10,7 +10,7 @@ class multi_regression(object):
     weights = []
     feature_matrix = None
 
-    def train(self, data_sframe, features, output, deg=1, step_size=1e-7, max_iterations=100, l2_penalty=1e3):
+    def train(self, data_sframe, features, output, deg=1, step_size=1, max_iterations=100, l2_penalty=1e3):
         self.features = features
         self.deg = deg
         (self.feature_matrix, output_array) = self.get_numpy_data(data_sframe, features, output)
@@ -90,21 +90,22 @@ class multi_regression(object):
     def ridge_regression_gradient_descent(self, feature_matrix, output, initial_weights, step_size, l2_penalty,
                                           max_iterations=100):
         print 'Starting gradient descent with l2_penalty = ' + str(l2_penalty)
-
+        print "features: "
+        print feature_matrix
         weights = np.array(initial_weights)  # make sure it's a numpy array
         iteration = 0  # iteration counter
         print_frequency = 1  # for adjusting frequency of debugging output
         while iteration < max_iterations:
             # while not reached maximum number of iterations:
             iteration += 1  # increment iteration counter
-            ### === code section for adjusting frequency of debugging output. ===
+
             if iteration == 10:
                 print_frequency = 10
             if iteration == 100:
                 print_frequency = 100
             if iteration % print_frequency == 0:
                 print('Iteration = ' + str(iteration))
-            ### === end code section ===
+
 
             # compute the predictions based on feature_matrix and weights using your predict_output() function
             predictions = self.predict_output(feature_matrix, weights)
@@ -116,9 +117,9 @@ class multi_regression(object):
                     np.dot(errors, errors) + l2_penalty * (np.dot(weights, weights) - weights[0] ** 2))
 
             for i in xrange(len(weights)):  # loop over each weight
-                # Recall that feature_matrix[:,i] is the feature column associated with weights[i]
+
                 # compute the derivative for weight[i].
-                # (Remember: when i=0, you are computing the derivative of the constant!)
+
                 if i == 0:
 
                     derv = self.feature_derivative_ridge(errors, feature_matrix[:, i], weights[i], l2_penalty, True)

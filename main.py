@@ -1,19 +1,21 @@
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 
 import multi_regression as mr
 
 sr = mr.multi_regression()
-d = {'one': pd.Series([1., 2., 3., 4., 5., 6., 7., 8.], index=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']),
-     'two': pd.Series([1., 4., 9., 16., 25., 36., 49., 64.], index=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])}
+
+length =500
+x = np.arange(length, dtype=float)
+y = x ** 2 + (np.random.rand(length) * 100)
+d = {'one': pd.Series(x),
+     'two': pd.Series(y)}
 df = pd.DataFrame(d)
 
-sr.train(df, ['one'], 'two', deg=2, max_iterations=1e3, l2_penalty=1e3)
-print sr.weights
+sr.train(df, ['one'], 'two', deg=2, max_iterations=1000, l2_penalty=1e1, step_size=1e-15)
 pred = pd.DataFrame()
-pred['one'] = pd.Series([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                        index=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'])
+pred['one'] = pd.Series(x)
 predictions = sr.predict(pred)
-print predictions
 plt.plot(df['one'], df['two'], '.', pred['one'], predictions, '-')
 plt.show()
